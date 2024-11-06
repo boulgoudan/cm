@@ -1,0 +1,70 @@
+---
+# vars file for roles/configure-packages
+
+brew_packages:
+  - ansible-lint
+  - gsed
+  - kubectl
+  - kubectx
+  - minikube
+  - helm
+  - tfenv
+  - terragrunt
+  - pulumi
+  - awscli
+  - cli53
+  - jq
+  - php
+  - composer
+  - openjdk
+  - scala
+  - go
+  - rust
+  - scalacenter/bloop/bloop
+  - tree
+  - mysql-client@8.0
+  - gnupg
+  - graphviz
+
+brew_casks:
+  - google-cloud-sdk
+  - pritunl
+  - docker
+  - google-chrome
+  - visual-studio-code
+  - lastpass
+  - slack
+  - dbeaver-community
+  - zoom
+  - adobe-acrobat-reader
+  - cyberduck
+  - zed
+  - the-unarchiver
+  - hyper
+
+brew_casks_to_uninstall:
+  - openlens
+
+brew_taps:
+  - homeport/dyff
+
+node_versions:
+  - 20.11.0
+
+terraform_versions:
+  - 1.1.7
+
+vscode_extensions:
+  - redhat.ansible
+  - GitHub.vscode-pull-request-github
+  - ms-azuretools.vscode-docker
+  - ms-vscode.cpptools
+  - golang.Go
+  - rust-lang.rust-analyzer
+  - ms-python.python
+  - Oracle.oracle-java
+  - scala-lang.scala
+  - HashiCorp.terraform
+  - mechatroner.rainbow-csv
+  - ms-vscode.makefile-tools
+  - HashiCorp.HCL

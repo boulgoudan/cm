@@ -1,0 +1,7 @@
+---
+- name: Configure macbookpro host
+  hosts: local
+  user: moustapha
+  gather_facts: yes
+  roles: 
+    - configure-packages
