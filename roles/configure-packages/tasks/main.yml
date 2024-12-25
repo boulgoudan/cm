@@ -1,7 +1,7 @@
 ---
 - name: Install nvm
   shell: >
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | zsh
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
   args:
     creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
     executable: /bin/zsh
@@ -35,7 +35,7 @@
   community.general.homebrew_cask:
     name: "{{ item }}"
     state: present
-  loop: "{{ brew_casks }}"
+  loop: "{{ brew_casks.install }}"
 
 - name: Uninstall Homebrew casks
   community.general.homebrew_cask:
@@ -86,6 +86,8 @@
   blockinfile:
     path: "{{ ansible_env.HOME }}/.zprofile"
     block: |
+      # brew
+      eval "$(/opt/homebrew/bin/brew shellenv)"
       # nvm
       export NVM_DIR="$HOME/.nvm"
       [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -127,5 +129,5 @@
       alias lla='ls -alG --color'
 
       # Aliases for remote EC2 instances
-      #alias mbm-sandbox='ssh -i ~/dev-sandbox/terraform-workspace-sandbox/keys/sandbox-server-key -L 5901:localhost:5900 user@sandbox.example.com'
-      #alias mbm-macmini='ssh -p 22162 -L 5902:localhost:5900 user@1.tcp.ngrok.io'
+      #alias sandbox-host='ssh -i ~/dev-sandbox/terraform-workspace-sandbox/keys/sandbox-server-key -L 5901:localhost:5900 user@sandbox.example.com'
+      #alias ngrok-host='ssh -p 22162 -L 5902:localhost:5900 user@1.tcp.ngrok.io'

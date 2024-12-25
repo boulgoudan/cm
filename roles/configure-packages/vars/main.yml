@@ -28,7 +28,6 @@ brew_packages:
     - php
     - composer
     - scala
-    - scalacenter/bloop/bloop
     - mysql-client@8.4
 
 brew_casks:
@@ -47,10 +46,11 @@ brew_casks:
 
 brew_taps:
   install:
-    - hashicorp/tap/terraform
-    - homeport/tap/dyff
+    - hashicorp/tap
+    - homeport/tap
 
   uninstall:
+    - scalacenter/bloop
 
 node_versions:
   - 22.12.0
