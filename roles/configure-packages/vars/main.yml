@@ -6,7 +6,6 @@ brew_packages:
     - cosign
     - ansible-lint
     - yamllint
-    - terragrunt
     - tenv
     - awscli
     - cli53
