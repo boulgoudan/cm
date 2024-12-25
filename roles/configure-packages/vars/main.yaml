@@ -2,57 +2,64 @@
 # vars file for roles/configure-packages
 
 brew_packages:
-  - ansible-lint
-  - gsed
-  - kubectl
-  - kubectx
-  - minikube
-  - helm
-  - tfenv
-  - terragrunt
-  - pulumi
-  - awscli
-  - cli53
-  - jq
-  - php
-  - composer
-  - openjdk
-  - scala
-  - go
-  - rust
-  - scalacenter/bloop/bloop
-  - tree
-  - mysql-client@8.0
-  - gnupg
-  - graphviz
+  install:
+    - cosign
+    - ansible-lint
+    - yamllint
+    - terragrunt
+    - tenv
+    - awscli
+    - cli53
+    - jq
+    - tree
+    - gnupg
+    - graphviz
+    - openjdk
+    - go
+
+  uninstall:
+    - kubectl
+    - kubectx
+    - helm
+    - minikube
+    - pulumi
+    - gsed
+    - rust
+    - php
+    - composer
+    - scala
+    - scalacenter/bloop/bloop
+    - mysql-client@8.4
 
 brew_casks:
-  - google-cloud-sdk
-  - pritunl
-  - docker
-  - google-chrome
-  - visual-studio-code
-  - lastpass
-  - slack
-  - dbeaver-community
-  - zoom
-  - adobe-acrobat-reader
-  - cyberduck
-  - zed
-  - the-unarchiver
-  - hyper
+  install:
+    - docker
+    - visual-studio-code
+    - adobe-acrobat-reader
+    - the-unarchiver
 
-brew_casks_to_uninstall:
-  - openlens
+  uninstall:
+    - dbeaver-community
+    - google-chrome
+    - lastpass
+    - slack
+    - zoom
 
 brew_taps:
-  - homeport/dyff
+  install:
+    - hashicorp/tap/terraform
+    - homeport/tap/dyff
+
+  uninstall:
 
 node_versions:
-  - 20.11.0
+  - 22.12.0
 
 terraform_versions:
-  - 1.1.7
+  - 1.10.3
+
+terragrunt_versions:
+  - 0.71.1
 
 vscode_extensions:
   - redhat.ansible

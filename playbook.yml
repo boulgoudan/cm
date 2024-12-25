@@ -1,5 +1,5 @@
 ---
-- name: Configure macbookpro host
+- name: Configure MacBook host
   hosts: local
   user: moustapha
   gather_facts: yes
