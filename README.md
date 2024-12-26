@@ -43,13 +43,22 @@ Python 3.9.6
 % brew install git
 ```
 
-## Check Ansible configuration
+## Apply Ansible configuration to you host
+
+### Get the code and get inside the repo
+
+```
+git clone https://github.com/boulgoudan/cm.git
+cd cm
+```
+
+### Check the configuration
 
 ```
 % ansible-playbook playbook.yml -i inventory/inventory.ini  --check
 ```
 
-## Apply Ansible configuration
+### Apply the configuration
 
 ```
 % ansible-playbook playbook.yml -i inventory/inventory.ini
