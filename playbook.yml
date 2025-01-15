@@ -2,6 +2,6 @@
 - name: Configure MacBook host
   hosts: local
   user: moustapha
-  gather_facts: yes
-  roles: 
+  gather_facts: true
+  roles:
     - configure-packages

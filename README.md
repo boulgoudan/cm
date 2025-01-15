@@ -48,8 +48,8 @@ Python 3.9.6
 ### Get the code and get inside the repo
 
 ```
-git clone https://github.com/boulgoudan/cm.git
-cd cm
+% git clone https://github.com/boulgoudan/cm.git
+% cd cm
 ```
 
 ### Check the configuration
@@ -63,3 +63,9 @@ cd cm
 ```
 % ansible-playbook playbook.yml -i inventory/inventory.ini
 ```
+
+## Source .zprofile and .zshrc
+
+```
+% source ~/.zprofile
+% source ~/.zshrc

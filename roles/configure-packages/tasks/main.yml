@@ -1,13 +1,15 @@
 ---
+# tasks for configure-packages role
+
 - name: Install nvm
-  shell: >
+  ansible.builtin.shell: >
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
   args:
     creates: "{{ ansible_env.HOME }}/.nvm/nvm.sh"
     executable: /bin/zsh
 
 - name: Install node versions
-  shell: "source {{ ansible_env.HOME }}/.nvm/nvm.sh && nvm install {{ item }} -g" 
+  ansible.builtin.shell: "source {{ ansible_env.HOME }}/.nvm/nvm.sh && nvm install {{ item }} -g"
   loop: "{{ node_versions }}"
 
 - name: Update homebrew and upgrade all packages
@@ -56,21 +58,21 @@
   loop: "{{ brew_taps.uninstall }}"
 
 - name: Install Terraform Versions
-  shell: "tenv tf install {{ item }}" 
+  ansible.builtin.command: "tenv tf install {{ item }}"
   loop: "{{ terraform_versions }}"
 
 - name: Use a specific Terraform Version
-  shell: "tenv tf use 1.10.3" 
+  ansible.builtin.command: "tenv tf use 1.10.3"
 
 - name: Install Terragrunt Versions
-  shell: "tenv tg install {{ item }}"
+  ansible.builtin.command: "tenv tg install {{ item }}"
   loop: "{{ terragrunt_versions }}"
 
 - name: Use a specific Terragrunt Version
-  shell: "tenv tg use 0.71.1"
+  ansible.builtin.command: "tenv tg use 0.71.1"
 
 - name: Install VSCode extensions
-  shell: "code --install-extension {{ item }}" 
+  ansible.builtin.command: "code --install-extension {{ item }}"
   loop: "{{ vscode_extensions }}"
 
 - name: Check if Oh My ZSH is installed
@@ -79,7 +81,7 @@
   register: ohmyzsh
 
 - name: Install Oh My ZSH
-  script: install-oh-my-zsh.sh
+  ansible.builtin.script: install-oh-my-zsh.sh
   when: not ohmyzsh.stat.exists
 
 - name: Add Oh My ZSH configs to .zprofile
@@ -102,7 +104,7 @@
         git-prompt
         docker
       )
-      
+
       # Language
       export LANG=en_US.UTF-8
       export LANGUAGE=en_US.UTF-8

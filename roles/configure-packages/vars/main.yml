@@ -1,5 +1,5 @@
 ---
-# vars file for roles/configure-packages
+# vars for configure-packages role
 
 brew_packages:
   install:
@@ -35,10 +35,10 @@ brew_casks:
     - visual-studio-code
     - adobe-acrobat-reader
     - the-unarchiver
+    - google-chrome
 
   uninstall:
     - dbeaver-community
-    - google-chrome
     - lastpass
     - slack
     - zoom
@@ -74,3 +74,4 @@ vscode_extensions:
   - mechatroner.rainbow-csv
   - ms-vscode.makefile-tools
   - HashiCorp.HCL
+  - yzane.markdown-pdf
