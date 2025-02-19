@@ -77,3 +77,4 @@ vscode_extensions:
   - ms-vscode.makefile-tools
   - HashiCorp.HCL
   - yzane.markdown-pdf
+  - GitHub.vscode-github-actions
