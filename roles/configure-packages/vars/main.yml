@@ -15,19 +15,21 @@ brew_packages:
     - graphviz
     - openjdk
     - go
-
-  uninstall:
+    - ant
+    - jenkins-lts
     - kubectl
+    - minikube
     - kubectx
     - helm
-    - minikube
-    - pulumi
+
+  uninstall:
     - gsed
     - rust
     - php
     - composer
     - scala
     - mysql-client@8.4
+    - cppcheck
 
 brew_casks:
   install:
