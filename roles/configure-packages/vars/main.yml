@@ -14,6 +14,7 @@ brew_packages:
     - gnupg
     - graphviz
     - openjdk
+    - maven
     - go
     - ant
     - jenkins-lts
@@ -21,6 +22,7 @@ brew_packages:
     - minikube
     - kubectx
     - helm
+    - poetry
 
   uninstall:
     - gsed
@@ -35,15 +37,16 @@ brew_casks:
   install:
     - docker
     - visual-studio-code
-    - adobe-acrobat-reader
     - the-unarchiver
     - google-chrome
+    - slack
+    - zoom
 
   uninstall:
     - dbeaver-community
     - lastpass
-    - slack
-    - zoom
+    - adobe-acrobat-reader
+    - ukelele
 
 brew_taps:
   install:
@@ -78,3 +81,5 @@ vscode_extensions:
   - HashiCorp.HCL
   - yzane.markdown-pdf
   - GitHub.vscode-github-actions
+  - ms-kubernetes-tools.vscode-kubernetes-tools
+  - vscjava.vscode-maven
